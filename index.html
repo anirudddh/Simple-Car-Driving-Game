@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Simple Car Driving Game</title>
+  </head>
+  <body>
+    
+    <script src="jquery-2.1.1.js"></script>
+    <script src="util.js"></script>
+    <script src="game.js"></script>
+    <link href="styling.css" rel="stylesheet" type="text/css" />
+
+    <div id="Instructions">
+      <h1>Simple Car Driving Game</h1>
+       <p>Game developed by </p> <a href="https://aniruddh1321.github.io/aniruddha.github.io/">Aniruddha Rajendra Shinde </a>
+      <h2>Game Instructions:</h2>
+      <p>Press the arrow keys to drive.</p>
+      <p>Red squares will slow you</p>
+	  <p>Black squares will end the game.</p>
+      <p>Green squares for a speed boost!</p>
+
+      <button id="reset">
+        Restart
+      </button>
+    </div>
+    <canvas></canvas>
+
+    <script>
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      var context = canvasEl.getContext("2d");
+      canvasEl.height = (window.innerHeight - 10) / 1.2;
+      canvasEl.width = (window.innerWidth - 10) / 2;
+
+      function restart() {
+        var newGame = new Racer.Game(context, canvasEl.width, canvasEl.height);
+        newGame.run();
+        $(document).on('keydown', newGame.keyPressed.bind(newGame));
+        $(document).on('keyup',  newGame.keyUnpressed.bind(newGame));
+      };
+      restart();
+      $('#reset').on('click', restart);
+
+    </script>
+  </body>
+
+  <div class="footer"> 
+
+  </div>
+
+</html>
