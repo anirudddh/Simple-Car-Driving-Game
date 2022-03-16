@@ -82,8 +82,8 @@
   Util.loadImages = function(game) {
     game.sunset = new Image();
     game.car = new Image();
-    game.sunset.src = './photos/sunset.jpg';
-    game.car.src = './photos/porsche.png';
+    game.sunset.src = 'sunset.jpg';
+    game.car.src = 'porsche.png';
   };
 
   Util.generateSprites = function(game) {
