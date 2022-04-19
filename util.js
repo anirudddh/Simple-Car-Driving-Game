@@ -82,8 +82,8 @@
   Util.loadImages = function(game) {
     game.sunset = new Image();
     game.car = new Image();
-    game.sunset.src = 'sunset.jpg';
-    game.car.src = 'porsche.png';
+    game.sunset.src = 'https://anirudddh.github.io/Simple-Car-Driving-Game/sunset.jpg';
+    game.car.src = 'https://anirudddh.github.io/Simple-Car-Driving-Game/porsche.png';
   };
 
   Util.generateSprites = function(game) {
